@@ -24,10 +24,6 @@ import javax.persistence.Id;
 		this.price=price;
 	}
 
-	 Phone(){
-		 
-	 }
-	 
 	public Long getId() {
 		return id;
 	}
