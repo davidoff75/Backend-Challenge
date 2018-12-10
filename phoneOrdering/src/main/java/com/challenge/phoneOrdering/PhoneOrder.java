@@ -21,6 +21,8 @@ public class PhoneOrder {
 	private ArrayList<Long> phones;
 	private long price;
 	
+	private static String PHONE_SERVICE_URI="http://localhost:8000/phones";
+	
 	public PhoneOrder(String name, String surname, String email, ArrayList<Long> phones) {
 		super();
 		this.name = name;
@@ -64,10 +66,15 @@ public class PhoneOrder {
 
 	public void calcPrice() {
 		price=0;
+		Long phonePrice;
 		RestTemplate restPhones= new RestTemplate();
 		Iterator<Long> itrPhones= phones.iterator();
 		while(itrPhones.hasNext()) {
-			price=price+restPhones.getForObject("http://localhost:8000/phones/"+itrPhones.next()+"/price", Long.class);			
+			phonePrice=restPhones.getForObject(PHONE_SERVICE_URI+"/"+itrPhones.next()+"/price", Long.class);
+			if (phonePrice == null)  {
+				throw new ResourceNotFoundException("The phone id "+itrPhones+ " is not in the catalog");
+			}
+			else price=price+phonePrice;
 		}
 	}
 	

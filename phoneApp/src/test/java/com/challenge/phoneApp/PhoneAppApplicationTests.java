@@ -12,5 +12,4 @@ public class PhoneAppApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
-
 }

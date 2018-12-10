@@ -28,8 +28,10 @@ public class PhoneOrderingController {
 		@PostMapping("/orders")
 		PhoneOrder newPhoneOrder(@RequestBody PhoneOrder phoneOrder) {
 			phoneOrder.calcPrice();
+			PhoneOrder result;
+			result= phoneOrderingRepo.save(phoneOrder);
 			logger.info("Getting richer! Order created:"+phoneOrder.toString());
-			return phoneOrderingRepo.save(phoneOrder);
+			return result;
 		}
 	
 }

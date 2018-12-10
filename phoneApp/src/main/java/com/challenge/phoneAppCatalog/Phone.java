@@ -1,4 +1,4 @@
-package com.challenge.phoneApp;
+package com.challenge.phoneAppCatalog;
 
 import lombok.Data;
 
@@ -6,18 +6,26 @@ import java.net.URL;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 
 @Data
 @Entity
- class Phone {
+public class Phone {
 
 	private @Id @GeneratedValue Long id;
-	private String name;
+	private @NotNull String name;
 	private String description;
 	private URL image;
-	private long price;
+	private @Min(1) long price;
 	
-	 Phone(String name, String description, URL image, long price) {
+	Phone () {
+		
+	}
+	
+	public Phone(String name, String description, URL image, long price) {
 		this.name=name;
 		this.description=description;
 		this.image=image;

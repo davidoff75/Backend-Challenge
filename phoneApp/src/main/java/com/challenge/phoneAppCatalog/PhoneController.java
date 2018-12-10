@@ -1,4 +1,4 @@
-package com.challenge.phoneApp;
+package com.challenge.phoneAppCatalog;
 
 import java.util.List;
 
@@ -27,12 +27,12 @@ public class PhoneController {
 		
 		@GetMapping("/phones/{id}")
 		Phone single(@PathVariable Long id) throws UnavailableException {
-			return phoneRepository.findById(id).orElseThrow(() -> new UnavailableException("FALLO") );
+			return phoneRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Phone with id "+id+" not found") );
 		}
 		
 		@GetMapping("/phones/{id}/price")
 		long phonePrice(@PathVariable Long id) throws UnavailableException {
-			return phoneRepository.findById(id).orElseThrow(() -> new UnavailableException("FALLO")).getPrice();
+			return phoneRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Phone with id "+id+" not found")).getPrice();
 		}
 		
 		@PostMapping("/phones")

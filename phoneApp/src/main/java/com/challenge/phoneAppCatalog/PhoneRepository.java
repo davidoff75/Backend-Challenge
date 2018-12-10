@@ -1,4 +1,4 @@
-package com.challenge.phoneApp;
+package com.challenge.phoneAppCatalog;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

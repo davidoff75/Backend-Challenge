@@ -1,4 +1,4 @@
-package com.challenge.phoneApp;
+package com.challenge.phoneAppCatalog;
 
 import java.net.URL;
 import org.springframework.boot.CommandLineRunner;
