@@ -25,6 +25,7 @@ public class PhoneOrderTest {
 	
 	@Test
 	public void allTest() {
+		//This test the controller all method, mocking the repository
 		PhoneOrderingController phoneOrderingController= new PhoneOrderingController(phoneOrderingRepo);
 		when(phoneOrderingRepo.findAll()).thenReturn (new ArrayList<PhoneOrder>());
 		List<PhoneOrder> allPhonesEntity= phoneOrderingController.all();
@@ -35,7 +36,10 @@ public class PhoneOrderTest {
 	
 	
 	@Test
-	public void CalcPrice() {
+	public void CalcPriceTest() {
+		//This tests the controller calcPrice method
+		//Precondition: there are 2 phones in the catalog, with ids 1 and 2, and prices 124 and 609
+		
 		//Initialization of objects:
 		ArrayList<Long> phones= new ArrayList<Long>();
 		phones.add((long) 1);

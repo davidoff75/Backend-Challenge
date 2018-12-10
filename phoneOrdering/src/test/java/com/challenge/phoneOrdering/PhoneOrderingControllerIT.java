@@ -34,4 +34,9 @@ public class PhoneOrderingControllerIT {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$",hasSize(0)));
 	}
+	
+	/*
+	  TO-DO: 
+	    -Create more IT for the rest of methods
+	*/
 }

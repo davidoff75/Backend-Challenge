@@ -5,7 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-
+//Class to pre-load two records in the DDBB, for development purposes
 @Configuration
 public class LoadDatabase {
 	@Bean
