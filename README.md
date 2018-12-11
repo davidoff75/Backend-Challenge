@@ -8,19 +8,19 @@ Design summary:
 - Catalog resource: microservice to provide catalog management operations 
 /phones : end-point resource
 Methods implemented:
-		- GET  
+	GET  
 			/phones: return all the phones in the catalog
 			/phones/{id}: return one phone with the id of the parameter
 			/phones/{id}/price: return the price of the phone with the id of the parameter
-		- POST 
+	POST 
 			/phones: create a new phone
 
 - Ordering resource: microservice for orders management.
 /orders: end-point resource
 Methods implemented:
-		- GET 
+	GET 
 			/orders: get all the orders
-		- POST 
+	POST 
 			/orders: create a new order
 - Swagger included in both projects, to enable the OpenAPI documentation  discovery.
 
