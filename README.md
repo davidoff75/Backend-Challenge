@@ -9,19 +9,19 @@ Design summary:
 /phones : end-point resource
 Methods implemented:
 GET  
-			/phones: return all the phones in the catalog
-			/phones/{id}: return one phone with the id of the parameter
-			/phones/{id}/price: return the price of the phone with the id of the parameter
+/phones: return all the phones in the catalog
+/phones/{id}: return one phone with the id of the parameter
+/phones/{id}/price: return the price of the phone with the id of the parameter
 POST 
-			/phones: create a new phone
+/phones: create a new phone
 
 - Ordering resource: microservice for orders management.
 /orders: end-point resource
 Methods implemented:
 GET 
-			/orders: get all the orders
+/orders: get all the orders
 POST 
-			/orders: create a new order
+/orders: create a new order
 - Swagger included in both projects, to enable the OpenAPI documentation  discovery.
 
 - Spring boot based, using Jar packaging with the Tomcat server embbeded. Port configured in the application properties file.
